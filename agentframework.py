@@ -1,7 +1,6 @@
 import random 
 
-
-class Agent():
+class Agent:
     
     def __init__(self, environment, agents, neighbourhood):
         self.environment = environment
