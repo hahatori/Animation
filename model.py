@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  3 22:45:32 2020
-
-@author: toriliang
-"""
-
-
 import random
 import operator
 import matplotlib.pyplot
@@ -15,27 +6,18 @@ import csv
 import numpy
 import matplotlib.animation 
 
-
-def distance_between(self, agent):
-    return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
-
 num_of_agents = 10
 num_of_iterations = 100
 neighbourhood = 20
 agents = []
-
-#environment.append(rowlist)
-#rowlist.append(value)
 rowlist = []
 environment = []
-#distance = [] 
-#f=open("in.txt",delimiter=',')
-#data = csv.reader(f)
 
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
 
 #frames, = ax.plot(x, y)
+
 
 with open("in.txt") as f:
     data = f.read().splitlines() 
@@ -57,10 +39,10 @@ for line in agents:
 
 # Make the agents.
 for i in range(num_of_agents):
-    
     agents.append(agentframework.Agent(environment, agents, neighbourhood))
     matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
-matplotlib.pyplot.show()
+    
+#matplotlib.pyplot.show()
 
 carry_on = True
 
@@ -75,12 +57,7 @@ def update(frame_number):
             agents[i].eat()
             agents[i].share_with_neighbours()
             
-    for self in agents:
-        for agent in agents:
-            distance = distance_between(self, agent)    
-    
-    #print("distance: %s" % distance)
-    
+    # Set stopping Animation condition.
     if random.random() < 0.1:
         carry_on = False
         print("stopping condition")
@@ -92,28 +69,24 @@ def update(frame_number):
     
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
-        #matplotlib.pyplot.draw()
-        matplotlib.pyplot.show()
-        
+        matplotlib.pyplot.show()        
      
 def gen_function(b = [0]):
     a = 0
-    global carry_on #Not actually needed as we're not assigning, but clearer
-    while (a < 10) & (carry_on) :
+    global carry_on # Display clearly, even if it is not assigned.
+    while (a < num_of_agents) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
 
+for self in agents:
+    for agent in agents:
+        agentframework.Agent.distance_between(self, agent) 
 
-#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=10)
+# Call the animation.
 animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, repeat=False)
 
-    
+# Show the animation.    
 matplotlib.pyplot.show()
-
-
-
-
-
 
 
 
