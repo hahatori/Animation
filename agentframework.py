@@ -1,15 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  3 22:47:20 2020
-
-@author: toriliang
-"""
-
 import random 
-import matplotlib.pyplot
-import numpy
-import matplotlib.animation 
 
 
 class Agent():
@@ -37,8 +26,7 @@ class Agent():
     def eat(self):
         if self.environment[self.y][self.x] > 10:
             self.environment[self.y][self.x] -= 10
-        self.store += 10 
-        
+        self.store += 10   
 
     def share_with_neighbours(self):
         for agent in self.agents:
@@ -54,15 +42,15 @@ class Agent():
         return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
    
 
+# Creat objects to test.
 a = Agent("environment","agents","neighbourhood")
-
 print(a.y, a.x)
 
 a.move("frame_number")
 print(a.y, a.x)
- 
-#a.distance_between("agent")
-#print(b)
+
+
+
 
 
 
