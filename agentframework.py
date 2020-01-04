@@ -69,5 +69,3 @@ print(a.y, a.x)
 
 
 
-#matplotlib.pyplot.xlim(0, 100)
-#matplotlib.pyplot.ylim(0, 100)
