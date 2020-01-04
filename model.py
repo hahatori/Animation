@@ -10,10 +10,11 @@ num_of_agents = 10
 num_of_iterations = 100
 neighbourhood = 20
 agents = []
-rowlist = []
+#rowlist = []
 environment = []
 
-fig = matplotlib.pyplot.figure(figsize=(7, 7))
+# Make animation properties.
+fig = matplotlib.pyplot.figure(figsize=(6, 6))
 ax = fig.add_axes([0, 0, 1, 1])
 
 #frames, = ax.plot(x, y)
@@ -46,6 +47,7 @@ for i in range(num_of_agents):
 
 carry_on = True
 
+# Update data points.
 def update(frame_number):
     fig.clear()   
     global carry_on
@@ -82,10 +84,10 @@ for self in agents:
     for agent in agents:
         agentframework.Agent.distance_between(self, agent) 
 
-# Call the animation.
+# Make the animation.
 animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, repeat=False)
 
-# Show the animation.    
+# Show the plot animation.    
 matplotlib.pyplot.show()
 
 
