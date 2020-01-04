@@ -13,6 +13,7 @@ import matplotlib.animation
 
 
 class Agent():
+    
     def __init__(self, environment, agents, neighbourhood):
         self.environment = environment
         self.store = 0
@@ -20,12 +21,9 @@ class Agent():
         self.x = random.randint(0,99)
         self.agents = agents
         self.neighbourhood = neighbourhood
-        #agent.y = agent
-        #agent.x = agent
         
     
     def move(self, frame_number):
-        
         if random.random() < 0.5:
             self.x = (self.x + 1) % 100
         else:
@@ -41,7 +39,6 @@ class Agent():
             self.environment[self.y][self.x] -= 10
         self.store += 10 
         
-   
 
     def share_with_neighbours(self):
         for agent in self.agents:
