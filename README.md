@@ -1,6 +1,6 @@
 # Animation
 
-Make agents talking to each other by altering each other's variables
+Use animation functions of matplotlib package, get it animated.
 
 This project including [in.txt](https://github.com/hahatori/Animation/blob/master/in.txt), [agentframework.py](https://github.com/hahatori/Animation/blob/master/agentframework.py) and [model.py](https://github.com/hahatori/Animation/blob/master/model.py).
 
@@ -43,7 +43,7 @@ $ <__main__.Agent object at 0x12253fc10>
   <class '__main__.Agent'>
 ```
 
-The core parameters of the **animation** are ```frames``` and ```func```.
+### The core parameters of the **animation** are ```frames``` and ```func```.
 
 **Frames** are the range of frames in the animation and are essentially a data generator.
 
