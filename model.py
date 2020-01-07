@@ -4,25 +4,24 @@ import matplotlib.pyplot
 import agentframework
 import csv
 import numpy
-import matplotlib.animation 
+import matplotlib.animation # import
 
-num_of_agents = 10
-num_of_iterations = 100
-neighbourhood = 20
-agents = []
-#rowlist = []
-environment = []
+num_of_agents = 10      # Make a num_of_agents variable and assign it to 10
+num_of_iterations = 100 # Make a num_of_iterations variable and assign it to 100
+neighbourhood = 20      # Make a neighbourhood variable and assign it to 20
+agents = []             # Creat agents list.
+environment = []        # Creat environment list.
 
 # Make animation properties.
-fig = matplotlib.pyplot.figure(figsize=(6, 6))
-ax = fig.add_axes([0, 0, 1, 1])
+fig = matplotlib.pyplot.figure(figsize=(6, 6)) # Set up the figure and the plot size.
+ax = fig.add_axes([0, 0, 1, 1])  # Creat 
 
 #frames, = ax.plot(x, y)
 
-
+# To load in.txt file.
 with open("in.txt") as f:
     data = f.read().splitlines() 
-
+# The downloaded text format is not standard, so needs to change.
     for row in data:
         rowlist = []
         for value in row.split(','):
@@ -38,10 +37,10 @@ for line in agents:
 #f.close()
 
 
-# Make the agents.
+# # Make the agents by putting into a for-loop.
 for i in range(num_of_agents):
     agents.append(agentframework.Agent(environment, agents, neighbourhood))
-    matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
+    matplotlib.pyplot.scatter(agents[i].x,agents[i].y)  # Make scatter plot.
     
 #matplotlib.pyplot.show()
 
@@ -50,7 +49,7 @@ carry_on = True
 # Update data points.
 def update(frame_number):
     fig.clear()   
-    global carry_on
+    global carry_on # carry_on is a global variable
     
     # Move the agents.
     for j in range(num_of_iterations):
@@ -64,10 +63,10 @@ def update(frame_number):
         carry_on = False
         print("stopping condition")
     
-    matplotlib.pyplot.xlim(0, 100)
-    matplotlib.pyplot.ylim(0, 100)
-    matplotlib.pyplot.imshow(environment)
-    matplotlib.pyplot.title(label = "Scatter Plot Animation")
+    matplotlib.pyplot.xlim(0, 100)         # Set the x-axis range from 0 to 100.
+    matplotlib.pyplot.ylim(0, 100)         # Set the y-axis range from 0 to 100.
+    matplotlib.pyplot.imshow(environment)  # Display an image on the axes.
+    matplotlib.pyplot.title(label = "Scatter Plot Animation") # Set plot title.
     
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
@@ -80,9 +79,10 @@ def gen_function(b = [0]):
         yield a			# Returns control and waits next call.
         a = a + 1
 
+# Use for-each loop iterator to put out agents.        
 for self in agents:
     for agent in agents:
-        agentframework.Agent.distance_between(self, agent) 
+        agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
 
 # Make the animation.
 animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, repeat=False)
