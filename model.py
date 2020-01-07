@@ -58,11 +58,13 @@ def update(frame_number): # Sets the number of animation frames
             agents[i].move("frame_number")
             agents[i].eat()
             agents[i].share_with_neighbours()
-            
-    # Set stopping Animation condition.
+    
+    """
+    # Set stopping condition.
     if random.random() < 0.1:
         carry_on = False
         print("stopping condition")
+    """
     
     # Set properties and show the animation plot.
     matplotlib.pyplot.xlim(0, 100)         # Set the x-axis range from 0 to 100.
@@ -88,7 +90,7 @@ for self in agents:
     for agent in agents:
         agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
 
-# Make the animation.
+# Make the animation stopping condition.
 animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, repeat=False)
 
 # Show the plot animation.    
