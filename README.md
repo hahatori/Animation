@@ -23,26 +23,6 @@ This project including [in.txt](https://github.com/hahatori/Animation/blob/maste
 
 ### Animation
 
-**self** represents an instance of a class, not a class. ```self.class ``` points to the class.
-
-```sh
-$ class Agent:       
-      def eat(self): 
-          print(self)
-          print(self.__class__)
-      
-  a = Agent() 
-  print(a)
-  a.eat()  
-```
-Output:
-
-```sh
-$ <__main__.Agent object at 0x12253fc10>
-  <__main__.Agent object at 0x12253fc10>
-  <class '__main__.Agent'>
-```
-
 ### The core parameters of the **animation** are ```frames``` and ```func```.
 
 **Frames** are the range of frames in the animation and are essentially a data generator.
@@ -50,36 +30,6 @@ $ <__main__.Agent object at 0x12253fc10>
 **Func** is a callback function that is called every time it is updated, so we just need to update the number in the figure in this function.
 
 In fact, **frames** determine the range of values for the entire animated frame, iterating once in the interval and then passing the value to **func** until the entire frames iteration is complete.
-
-```sh
-$ class Agent(object): 
-  def __init__(self, name, age): 
-    self.name = name 
-    self.age = age 
-  
-  def SetName(self,name): 
-    self.name = name 
-  
-  def SetAge(self,age): 
-    self.age = age 
-  
-  def GetName(self): 
-    return self.name 
-  
-  def GetAge(self): 
-    return self.age 
-  
-u = User('Obama',17) 
-print u.GetName() 
-print u.GetAge() 
-```
-
-Output:
-
-```sh
-$ Obama
-  17
-```
 
 ## Theoretical Results
 
@@ -91,8 +41,8 @@ The model refers to methods such as ```eat``` ，```move``` and ```share_with_ne
 
 ## Issues
 
-1. Using ```anim.save('test_animation.gif',writer='imagemagick')``` to save **test_animation.gif** file cannot run.
+1. Using ```anim.save('test_animation.gif',writer='imagemagick')``` to save **test_animation.gif** file.
 
-2. When you want to stop the animation, use the following statement ```animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=num_of_iterations)```,
-3. 
+2. When you want to stop the animation, use the following statement ```animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=num_of_iterations)```
+
 
