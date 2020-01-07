@@ -31,6 +31,14 @@ This project including [in.txt](https://github.com/hahatori/Animation/blob/maste
 
 In fact, **frames** determine the range of values for the entire animated frame, iterating once in the interval and then passing the value to **func** until the entire frames iteration is complete.
 
+### def update(frame_number):
+
+Define ```update``` method to update data in the drawn graph, sets the number of animation frames.
+
+### def gen_function():
+
+Define a ```gen_function``` function which is a generator function. After execution，pass the results to the update function.
+
 ## Theoretical Results
 
 The model refers to methods such as ```eat``` ，```move``` and ```share_with_neighbours``` from the **agentframework.py**, which are shown on the animation.
