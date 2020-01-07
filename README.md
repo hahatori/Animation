@@ -83,7 +83,7 @@ $ Obama
 
 ## Theoretical Results
 
- 
+The model refers to methods such as ```eat``` ，```move``` and ```share_with_neighbours``` from the **agentframework.py**, which are shown on the animation.
 
 ## Actual Results
 
@@ -91,7 +91,8 @@ $ Obama
 
 ## Issues
 
-1. 
-2. 
+1. Using ```anim.save('test_animation.gif',writer='imagemagick')``` to save **test_animation.gif** file cannot run.
+
+2. When you want to stop the animation, use the following statement ```animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=num_of_iterations)```,
 3. 
 
