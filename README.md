@@ -90,7 +90,7 @@ Then use ```agentframework.Agent.distance_between(self, agent)``` to call it in 
 
 ## Actual Results
 
-![Plot](https://github.com/hahatori/Python_Assignment1/blob/master/Communi.png)
+![Animation](https://github.com/hahatori/Python_Assignment1/blob/master/Ani.mov)
 
 ## Issues
 
