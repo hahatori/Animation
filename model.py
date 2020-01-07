@@ -97,7 +97,7 @@ animation = matplotlib.animation.FuncAnimation(fig, update,frames=gen_function, 
 matplotlib.pyplot.show()
 
 # Save .gif file.
-#animation.save('test_animation.gif',writer='imagemagick')
+animation = matplotlib.animation.save('test_animation.gif',writer='imagemagick')
 
 
 
